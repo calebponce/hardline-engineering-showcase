@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A source-safe engineering case study for Hardline by co-founders Keenan Francisco and Caleb Ponce."
+    />
+    <meta name="theme-color" content="#08090e" />
+    <meta property="og:title" content="Hardline Engineering Case Study" />
+    <meta
+      property="og:description"
+      content="From phone capture to a reviewable wall record. Explore the system and the founders' documented contribution record."
+    />
+    <meta property="og:type" content="website" />
+    <title>Hardline | Engineering Case Study</title>
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-meter" aria-hidden="true"><span></span></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Hardline engineering case study home">
+        <svg aria-hidden="true" viewBox="0 0 32 32">
+          <rect x="2.5" y="2.5" width="11" height="11" rx="2" />
+          <rect class="brand-mark-fill" x="18.5" y="2.5" width="11" height="11" rx="2" />
+          <rect class="brand-mark-dim" x="2.5" y="18.5" width="11" height="11" rx="2" />
+          <rect x="18.5" y="18.5" width="11" height="11" rx="2" />
+        </svg>
+        <span>Hardline</span>
+        <span class="brand-context">Engineering case study</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="https://hardline-seven.vercel.app/">Product site</a>
+        <a href="#system">System</a>
+        <a href="#decisions">Decisions</a>
+        <a href="#founders">Founders</a>
+        <a href="#scope">Scope</a>
+      </nav>
+
+      <a
+        class="header-link"
+        href="https://github.com/keenanfrancisco/hardline-engineering-showcase"
+        aria-label="View the Hardline engineering showcase source on GitHub"
+      >
+        Source
+        <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 15 15 5M8 5h7v7" /></svg>
+      </a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="case-label"><span aria-hidden="true"></span> Source-safe portfolio case study</p>
+          <h1 id="hero-title">From phone capture to a trustworthy <em>wall record.</em></h1>
+          <p class="hero-summary">
+            Hardline is an engineering system for documenting exposed utilities before walls close.
+            This public artifact shows the product thinking, system boundaries, and documented work of
+            co-founders Keenan Francisco and Caleb Ponce without publishing the production codebase.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://hardline-seven.vercel.app/">Visit the Hardline product site</a>
+            <a class="button button-secondary" href="#demo">Explore the synthetic demo</a>
+          </div>
+          <p class="truth-note">
+            <strong>Evidence boundary:</strong> the visualization uses a code-rendered scene and synthetic
+            utility data. It is not a field-accuracy result, customer scan, or performance claim.
+          </p>
+        </div>
+
+        <figure class="instrument" id="demo" aria-labelledby="demo-caption" data-mode="record">
+          <div class="instrument-bar">
+            <div class="instrument-id">
+              <span class="live-dot" aria-hidden="true"></span>
+              <span>SYN-042 / OPEN FRAMING / NORTH WALL</span>
+            </div>
+            <span class="instrument-state">SYNTHETIC RECORD</span>
+          </div>
+
+          <div class="instrument-grid">
+            <div class="viewport" role="group" aria-label="Code-rendered synthetic utility map">
+              <svg class="synthetic-scene" viewBox="0 0 600 720" aria-hidden="true" focusable="false">
+                <rect class="scene-wall" width="600" height="720" />
+                <g class="scene-bays">
+                  <rect x="0" y="0" width="120" height="720" />
+                  <rect x="240" y="0" width="120" height="720" />
+                  <rect x="480" y="0" width="120" height="720" />
+                </g>
+                <path class="scene-brace" d="M-30 584 210 34h44L14 584Z" />
+                <g class="scene-framing">
+                  <rect x="57" y="30" width="54" height="660" />
+                  <rect x="147" y="30" width="54" height="660" />
+                  <rect x="237" y="30" width="54" height="660" />
+                  <rect x="327" y="30" width="54" height="660" />
+                  <rect x="417" y="30" width="54" height="660" />
+                  <rect x="507" y="30" width="54" height="660" />
+                  <rect x="0" y="30" width="600" height="34" />
+                  <rect x="0" y="656" width="600" height="34" />
+                </g>
+                <g class="scene-fasteners">
+                  <circle cx="84" cy="94" r="2" /><circle cx="84" cy="622" r="2" />
+                  <circle cx="174" cy="94" r="2" /><circle cx="174" cy="622" r="2" />
+                  <circle cx="264" cy="94" r="2" /><circle cx="264" cy="622" r="2" />
+                  <circle cx="354" cy="94" r="2" /><circle cx="354" cy="622" r="2" />
+                  <circle cx="444" cy="94" r="2" /><circle cx="444" cy="622" r="2" />
+                  <circle cx="534" cy="94" r="2" /><circle cx="534" cy="622" r="2" />
+                </g>
+                <path class="scene-floor" d="M0 690H600L548 720H44Z" />
+              </svg>
+              <div class="blueprint-grid" aria-hidden="true"></div>
+              <div class="scan-sweep" aria-hidden="true"></div>
+
+              <svg class="utility-overlay" viewBox="0 0 600 720" role="img" aria-labelledby="map-title map-description">
+                <title id="map-title">Synthetic mapped utilities</title>
+                <desc id="map-description">A reference visualization containing studs, two wire paths, one pipe, and three outlet markers.</desc>
+                <g class="map-layer studs" data-layer="studs">
+                  <path d="M84 42V678M174 42V678M264 42V678M354 42V678M444 42V678M534 42V678" />
+                </g>
+                <g class="map-layer wire" data-layer="wire">
+                  <path d="M56 288H470C505 288 522 310 522 340V424" />
+                  <path class="wire-dim" d="M176 492H418C452 492 470 474 470 444V372" />
+                </g>
+                <g class="map-layer pipe" data-layer="pipe">
+                  <path d="M330 76V612" />
+                </g>
+                <g class="map-layer outlets" data-layer="outlets">
+                  <g transform="translate(126 288)"><rect x="-12" y="-16" width="24" height="32" rx="4" /><circle cy="-6" r="2" /><circle cy="6" r="2" /></g>
+                  <g transform="translate(414 288)"><rect x="-12" y="-16" width="24" height="32" rx="4" /><circle cy="-6" r="2" /><circle cy="6" r="2" /></g>
+                  <g transform="translate(470 492)"><rect x="-12" y="-16" width="24" height="32" rx="4" /><circle cy="-6" r="2" /><circle cy="6" r="2" /></g>
+                </g>
+              </svg>
+
+              <div class="viewport-corners" aria-hidden="true"></div>
+              <div class="viewport-readout" aria-hidden="true">
+                <span>REFERENCE FRAME / NORMALIZED</span>
+                <output id="cursor-readout">X 0.500 / Y 0.500</output>
+              </div>
+            </div>
+
+            <aside class="readout-panel" aria-label="Synthetic record controls">
+              <div>
+                <p class="panel-title">View state</p>
+                <div class="segmented-control" role="group" aria-label="Demo view state">
+                  <button type="button" data-mode-button="capture" aria-pressed="false">Capture</button>
+                  <button type="button" data-mode-button="record" aria-pressed="true">Record</button>
+                  <button type="button" data-mode-button="evidence" aria-pressed="false">Evidence</button>
+                </div>
+              </div>
+
+              <div class="record-summary" aria-live="polite">
+                <p class="panel-title">Synthetic contents</p>
+                <dl id="record-counts"></dl>
+              </div>
+
+              <div>
+                <p class="panel-title">Layers</p>
+                <div class="layer-controls" id="layer-controls"></div>
+              </div>
+
+              <div class="evidence-note">
+                <span>POSITION BASIS</span>
+                <strong id="basis-readout">reference visualization</strong>
+                <p id="basis-detail">No measured coordinates are claimed in this public demo.</p>
+              </div>
+            </aside>
+          </div>
+
+          <figcaption id="demo-caption">
+            Interactive product-language sample. All detections and coordinates are synthetic.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="credibility-line" aria-label="Case study facts">
+        <p><strong>Private production system</strong><span>iOS, Python, TypeScript</span></p>
+        <p><strong>514 founder-authored commits</strong><span>GitHub API, 2026-09-08</span></p>
+        <p><strong>Public artifact</strong><span>synthetic data only</span></p>
+      </section>
+
+      <section class="section system-section" id="system" aria-labelledby="system-title">
+        <div class="section-intro">
+          <p class="section-marker">The system</p>
+          <h2 id="system-title">One field workflow across three engineering surfaces.</h2>
+          <p>
+            The production system connects an iPhone capture client, an asynchronous processing
+            backend, and a browser review console. This diagram deliberately stops at architectural
+            boundaries; implementation and infrastructure remain private.
+          </p>
+        </div>
+
+        <ol class="system-flow" aria-label="Hardline system flow">
+          <li>
+            <span class="flow-index">01</span>
+            <div><strong>Capture</strong><p>Phone-guided recording with spatial context and field feedback.</p></div>
+            <span class="flow-tech">Swift / ARKit</span>
+          </li>
+          <li>
+            <span class="flow-index">02</span>
+            <div><strong>Process</strong><p>Queued reconstruction, detection, provenance, and record assembly.</p></div>
+            <span class="flow-tech">Python / FastAPI</span>
+          </li>
+          <li>
+            <span class="flow-index">03</span>
+            <div><strong>Review</strong><p>Permissioned 2D and 3D inspection, correction, export, and sharing.</p></div>
+            <span class="flow-tech">TypeScript / React</span>
+          </li>
+          <li>
+            <span class="flow-index">04</span>
+            <div><strong>Return</strong><p>Alignment-aware guidance back to the documented physical wall.</p></div>
+            <span class="flow-tech">Swift / spatial math</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section decisions-section" id="decisions" aria-labelledby="decisions-title">
+        <div class="section-intro compact">
+          <p class="section-marker">Engineering decisions</p>
+          <h2 id="decisions-title">The hard work was deciding what the system is allowed to claim.</h2>
+          <p>
+            The production history records a shift from feature breadth toward honest geometry,
+            observable failure modes, and a review trail that distinguishes measurement from inference.
+          </p>
+        </div>
+
+        <div class="decision-list">
+          <article class="decision-row">
+            <div class="decision-copy">
+              <p class="decision-owner">Selected authored work / Keenan</p>
+              <h3>Keep measurement and inference separate.</h3>
+              <p>
+                Coordinate provenance travels with the result. Measured wall-local positions,
+                approximate image-relative locations, and unreferenced detections cannot silently
+                collapse into one confidence claim.
+              </p>
+            </div>
+            <pre aria-label="Illustrative coordinate provenance contract"><code><span>position_basis</span>
+  measured        → wall-local frame
+  approximate     → image-relative only
+  unreferenced    → no position claim</code></pre>
+          </article>
+
+          <article class="decision-row">
+            <div class="decision-copy">
+              <p class="decision-owner">Selected authored work / Caleb</p>
+              <h3>Make the record usable beyond the scan.</h3>
+              <p>
+                The workflow became a full product surface: durable room identity, guarded uploads,
+                workspace access, 2D review, controlled sharing, quotas, and field-facing iOS feedback.
+              </p>
+            </div>
+            <pre aria-label="Illustrative product delivery flow"><code><span>record_lifecycle</span>
+  capture → upload → workspace
+  review  → share  → return
+
+  boundaries: auth / rate / quota</code></pre>
+          </article>
+
+          <article class="decision-row shared-decision">
+            <div class="decision-copy">
+              <p class="decision-owner">Shared product discipline</p>
+              <h3>Treat a plausible picture as the beginning of validation, not the end.</h3>
+              <p>
+                Synthetic tests verify software behavior. They are not field evidence. Hardline's
+                validation contract requires physical ground truth before any measured accuracy claim.
+              </p>
+            </div>
+            <div class="evidence-stack" aria-label="Evidence hierarchy">
+              <span>Synthetic replay <small>software check</small></span>
+              <span>Measured pilot <small>field observation</small></span>
+              <span>Reviewed report <small>claim boundary</small></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section founders-section" id="founders" aria-labelledby="founders-title">
+        <div class="section-intro compact">
+          <p class="section-marker">Contribution record</p>
+          <h2 id="founders-title">Built by Keenan Francisco and Caleb Ponce.</h2>
+          <p>
+            Counts below are attributed commits reported by GitHub for the private production
+            repository on September 8, 2026. Selected work was internally verified against authored
+            commit evidence; outside reviewers cannot inspect those private objects, and attribution
+            does not imply sole ownership of shared product decisions.
+          </p>
+        </div>
+
+        <div class="founder-ledger">
+          <article class="founder-profile">
+            <div class="founder-heading">
+              <span class="founder-monogram" aria-hidden="true">KF</span>
+              <div>
+                <h3>Keenan Francisco</h3>
+                <a href="https://github.com/keenanfrancisco">@keenanfrancisco</a>
+              </div>
+              <p><strong>286</strong><span>authored commits</span></p>
+            </div>
+            <p class="contribution-focus">Reliability, spatial contracts, field validation, iOS capture, and deployment safety.</p>
+            <ul>
+              <li>Reworked capture-to-return coordinate and datum contracts across backend, web, and iOS.</li>
+              <li>Built adversarial evaluator baselines and field-evidence reporting paths.</li>
+              <li>Added wall-coverage gating, pipeline observability, secret scanning, and release CI.</li>
+            </ul>
+            <a class="profile-link" href="https://github.com/keenanfrancisco">View GitHub profile <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="founder-profile">
+            <div class="founder-heading">
+              <span class="founder-monogram caleb" aria-hidden="true">CP</span>
+              <div>
+                <h3>Caleb Ponce</h3>
+                <a href="https://github.com/calebponce">@calebponce</a>
+              </div>
+              <p><strong>228</strong><span>authored commits</span></p>
+            </div>
+            <p class="contribution-focus">Full-stack product delivery, reconstruction integration, security, sharing, and field UX.</p>
+            <ul>
+              <li>Integrated the RGB-only reconstruction path and connected it to scan processing.</li>
+              <li>Shipped durable room identity, public review links, and the 2D utility record.</li>
+              <li>Hardened authentication and rate boundaries while closing iOS scan-flow gaps.</li>
+            </ul>
+            <a class="profile-link" href="https://github.com/calebponce">View GitHub profile <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+
+        <p class="ledger-link">
+          The internally verified contribution methodology and selected private commit references are documented
+          in <a href="CONTRIBUTIONS.md">CONTRIBUTIONS.md</a>.
+        </p>
+      </section>
+
+      <section class="section scope-section" id="scope" aria-labelledby="scope-title">
+        <div class="section-intro compact">
+          <p class="section-marker">Disclosure boundary</p>
+          <h2 id="scope-title">Public enough to inspect. Narrow enough to protect the company.</h2>
+        </div>
+
+        <div class="scope-ledger">
+          <div>
+            <h3><span class="scope-icon public" aria-hidden="true">+</span> Included here</h3>
+            <ul>
+              <li>Interactive synthetic product-language demo</li>
+              <li>High-level system boundaries and technology choices</li>
+              <li>Dated GitHub contribution counts for both founders</li>
+              <li>Selected engineering decisions and evidence boundaries</li>
+              <li>Runnable, dependency-free portfolio source</li>
+            </ul>
+          </div>
+          <div>
+            <h3><span class="scope-icon private" aria-hidden="true">−</span> Kept private</h3>
+            <ul>
+              <li>Production application and complete Git history</li>
+              <li>Core reconstruction, geometry, and relocalization implementation</li>
+              <li>Infrastructure configuration, secrets, and operational history</li>
+              <li>Customer, property, scan, or field-validation data</li>
+              <li>Internal go-to-market and company planning documents</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="closing-statement">
+          <p>Product site / private walkthrough</p>
+          <h3>Ask either founder for a private architecture walkthrough.</h3>
+          <div>
+            <a class="button button-primary" href="https://hardline-seven.vercel.app/">Visit the product site</a>
+            <a class="button button-secondary" href="https://github.com/keenanfrancisco">Keenan</a>
+            <a class="button button-secondary" href="https://github.com/calebponce">Caleb</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#top">
+        <svg aria-hidden="true" viewBox="0 0 32 32">
+          <rect x="2.5" y="2.5" width="11" height="11" rx="2" />
+          <rect class="brand-mark-fill" x="18.5" y="2.5" width="11" height="11" rx="2" />
+          <rect class="brand-mark-dim" x="2.5" y="18.5" width="11" height="11" rx="2" />
+          <rect x="18.5" y="18.5" width="11" height="11" rx="2" />
+        </svg>
+        <span>Hardline</span>
+      </a>
+      <p>Engineering case study / synthetic data / no performance claims</p>
+      <p><span id="year">2026</span> / Keenan Francisco + Caleb Ponce</p>
+    </footer>
+  </body>
+</html>
