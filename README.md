@@ -1,3 +1,5 @@
+[![Verify public artifact](https://github.com/calebponce/hardline-engineering-showcase/actions/workflows/verify.yml/badge.svg)](https://github.com/calebponce/hardline-engineering-showcase/actions)
+
 # Hardline engineering showcase
 
 Hardline documents utilities while framing is exposed, then turns the capture into a reviewable wall record.
