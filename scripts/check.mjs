@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
 import { readdir, readFile, stat } from "node:fs/promises";
-import { extname, join, relative } from "node:path";
+import { basename, extname, join, relative } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const root = new URL("../", import.meta.url);
+const rootPath = fileURLToPath(root);
 const required = [
   "README.md",
   "CONTRIBUTIONS.md",
@@ -50,11 +52,11 @@ for (const path of required) {
   assert.equal(info.isFile(), true, `Missing required file: ${path}`);
 }
 
-const files = await walk(root.pathname);
+const files = await walk(rootPath);
 
 for (const absolute of files) {
-  const path = relative(root.pathname, absolute);
-  assert.equal(forbiddenNames.includes(path) || forbiddenNames.includes(path.split("/").at(-1)), false, `Forbidden file: ${path}`);
+  const path = relative(rootPath, absolute);
+  assert.equal(forbiddenNames.includes(path) || forbiddenNames.includes(basename(path)), false, `Forbidden file: ${path}`);
   assert.equal(opaqueMediaExtensions.has(extname(path).toLowerCase()), false, `Opaque media requires explicit provenance review: ${path}`);
 
   if (!textExtensions.has(extname(path))) continue;
