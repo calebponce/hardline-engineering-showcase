@@ -1,6 +1,7 @@
 name: Verify public artifact
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
