@@ -6,6 +6,7 @@ Hardline documents utilities while framing is exposed, then turns the capture in
 
 This public repository is a source-safe portfolio artifact for co-founders [Keenan Francisco](https://github.com/keenanfrancisco) and [Caleb Ponce](https://github.com/calebponce). It demonstrates the product language, system boundaries, and selected engineering decisions without publishing Hardline's production codebase, operational configuration, or field data.
 
+- **Live engineering showcase:** [Interactive case study](https://calebponce.github.io/hardline-engineering-showcase/)
 - **Product:** [Hardline marketing site](https://hardline-seven.vercel.app/)
 - **Technical case study:** [docs/CASE_STUDY.md](docs/CASE_STUDY.md)
 - **Contribution evidence:** [CONTRIBUTIONS.md](CONTRIBUTIONS.md)
